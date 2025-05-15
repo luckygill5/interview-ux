@@ -1,0 +1,39 @@
+@import "../../common/variable.scss";
+@import "../../common/function.scss";
+@import "../../common/mixin.scss";
+
+
+
+
+.banner-container{
+    height: 500px;
+    background-color: $bgRed;
+    position: relative;
+    @include flexbox;
+    align-items: center;
+    justify-content: center;
+    .information{
+        @include flexbox;
+        flex-direction: column;
+        align-items: center;
+        row-gap: px-to-vw(15);
+        .banner-title{
+            font-size: px-to-vw(30);
+            margin-top: 0;
+            // margin-bottom: px-to-vw(15);
+            color: $white;
+            text-align: center;
+
+        }
+        .banner-info{
+            font-size: px-to-vw(30);
+            margin-top: 0;
+            // margin-bottom: px-to-vw(15);
+            color: $white;
+            text-align: center;
+        }
+        .btn{
+            @include buttonData;
+        }
+    }
+}

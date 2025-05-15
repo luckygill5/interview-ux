@@ -1,0 +1,18 @@
+@import "./function.scss";
+@import "./variable.scss";
+
+
+@mixin flexbox {
+    display: -webkit-box;
+    display: flex;
+    -ms-flex: flex;
+}
+
+@mixin buttonData{
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: px-to-vw(15);
+    background-color: $buttonColor;
+}
