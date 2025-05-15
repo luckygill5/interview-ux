@@ -1,33 +1,35 @@
 import React from "react";
 import "./Header.scss";
-// import Link from "react-bootstrap"
- 
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Header() {
-return (
+  const HeaderMenus = [
+    { path: "/About", title: "About Us" },
+    { path: "/Services", title: "Services" },
+      { path: "/Contact", title: "Contact" },
+  ];
+  return (
     <>
-    <header>
+      <header>
         <div className="logo_cont">
-            <span className="logo-text">TechWave Solution</span>
+          <span className="logo-text">
+            <Link to="/">TechWave Solution</Link>
+          </span>
         </div>
         <div className="navigation-menus">
-            <nav>
-                <ul>
-                    <li>
-                        <a href="/About Us">About us</a>
-                    </li>
-                     <li>
-                        <a to="/Services"> Services</a>
-                    </li>
-                   <li>
-                        <a to="/Contact">Contact</a>
-                    </li>
-                </ul>
-            </nav>
+          <nav>
+            <ul>
+                {
+                    HeaderMenus.length > 0 &&
+                    HeaderMenus.map(data => <li><Link className="nav-link" to={data.path}>{data.title}</Link></li>)
+                }
+            </ul>
+          </nav>
         </div>
-    </header>
+      </header>
     </>
-);
+  );
 }
 
 export default Header;

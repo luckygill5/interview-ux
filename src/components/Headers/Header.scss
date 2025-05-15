@@ -13,11 +13,18 @@ header{
     top: 0;
     width: 100%;
     height: px-to-vw(100);
+    z-index: 1;
     .logo_cont{
         width: px-to-vw(300);
         .logo-text{
-            color: $black;
+      
             font-size: px-to-vw(24);
+            a{
+            text-decoration: none;
+            cursor: pointer;
+            color: $black;
+            }
+
         }
     }
     .navigation-menus{
@@ -33,12 +40,17 @@ header{
             column-gap: px-to-vw(15);
             li{
                 list-style: none;
-                a{
+                .nav-link{
                     padding: px-to-vw(15);
                     font-size: px-to-vw(30);
                     color: $black;
                     text-decoration: none;
                     cursor: pointer;
+                    transition: background-color .2s ease-in-out;
+                    border-radius: 4px;
+                    &:hover{
+                        background-color: rgba($color: #fff, $alpha: 0.5);
+                    }
                 }
             }
         }
